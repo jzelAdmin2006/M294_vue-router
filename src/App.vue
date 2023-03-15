@@ -1,23 +1,26 @@
 <script setup>
+import { RouterView, RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <header>
-      <div class="container">
-        <div class="logo">
-          Vue Router Beispiel
-        </div>
-        <nav>
-          <!-- Navigation -->
-          <a href="#">Home</a>
-          <a href="#">Über uns</a>
-        </nav>
+  <header>
+    <div class="container">
+      <div class="logo">
+        Vue Router Beispiel
       </div>
-    </header>
+      <nav>
+        <!-- Navigation -->
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">Über uns</RouterLink>
+        <RouterLink to="/secret">Top secret</RouterLink>
+      </nav>
+    </div>
+  </header>
 
-    <main class="container">
-      <!-- Inhalt -->
-    </main>
+  <main class="container">
+    <!-- Inhalt -->
+    <RouterView />
+  </main>
 </template>
 
 <style>
@@ -60,6 +63,7 @@ nav a {
   color: #fff;
   margin-left: 10px;
 }
+
 .router-link-active {
   color: yellow;
   text-decoration: underline;
